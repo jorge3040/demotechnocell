@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AK Technocell — Venta, Reparación y Accesorios de Celulares</title>
+<meta name="description" content="AK Technocell: venta de celulares, reparación técnica especializada y accesorios premium. Tu celular en las mejores manos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0A0A;
+    --bg-pure:#000000;
+    --surface:#141414;
+    --surface-2:#1A1A1A;
+    --surface-3:#202020;
+    --border:#2A2A2A;
+    --border-soft:#232323;
+    --text:#FFFFFF;
+    --text-dim:#9A9A9A;
+    --text-dimmer:#666666;
+    --accent-1:#4F7CFF;
+    --accent-2:#9B5CFF;
+    --accent-grad: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    --success:#3DDC84;
+    --whatsapp:#25D366;
+    --radius-s:8px;
+    --radius-m:14px;
+    --radius-l:22px;
+    --shadow-glow: 0 0 0 1px rgba(155,92,255,0.12), 0 20px 60px -20px rgba(79,124,255,0.35);
+    --maxw: 1280px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.5;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{ font-family:'Poppins', sans-serif; font-weight:700; letter-spacing:-0.02em; }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit; cursor:pointer;}
+  :focus-visible{ outline:2px solid var(--accent-1); outline-offset:3px; }
+
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--text-dim); font-weight:600; margin-bottom:14px;
+  }
+  .eyebrow::before{ content:''; width:18px; height:2px; background:var(--accent-grad); border-radius:2px; }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:14px 26px; border-radius:999px; font-weight:600; font-size:15px;
+    border:1px solid transparent; transition:transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{ background:var(--accent-grad); color:#fff; box-shadow:0 10px 30px -10px rgba(107,92,255,.55); }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 16px 36px -10px rgba(107,92,255,.7); }
+  .btn-ghost{ background:transparent; color:var(--text); border-color:var(--border); }
+  .btn-ghost:hover{ border-color:var(--text-dim); transform:translateY(-2px); }
+  .btn-whatsapp{ background:var(--whatsapp); color:#08210f; }
+  .btn-whatsapp:hover{ transform:translateY(-2px); box-shadow:0 14px 30px -12px rgba(37,211,102,.55); }
+  .btn-block{ width:100%; }
+  .btn-sm{ padding:10px 18px; font-size:13px; }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:500;
+    backdrop-filter:blur(16px) saturate(140%);
+    background:rgba(10,10,10,.72);
+    border-bottom:1px solid var(--border-soft);
+    transition:background .3s ease;
+  }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; max-width:var(--maxw); margin:0 auto; }
+  .logo{ display:flex; align-items:center; gap:10px; font-family:'Poppins'; font-weight:700; font-size:19px; letter-spacing:-.01em; }
+  .logo-mark{
+    width:36px; height:36px; border-radius:10px; background:var(--accent-grad);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    box-shadow:0 6px 18px -6px rgba(107,92,255,.6);
+  }
+  .logo-mark svg{ width:19px; height:19px; }
+  .logo span{ color:var(--text-dim); font-weight:500; }
+
+  .nav-links{ display:flex; align-items:center; gap:38px; }
+  .nav-links a{
+    font-size:14.5px; font-weight:500; color:var(--text-dim);
+    position:relative; padding:6px 0; transition:color .2s ease;
+  }
+  .nav-links a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:1px;
+    background:var(--accent-grad); transition:width .25s ease;
+  }
+  .nav-links a:hover{ color:var(--text); }
+  .nav-links a:hover::after{ width:100%; }
+
+  .nav-actions{ display:flex; align-items:center; gap:14px; }
+  .cart-btn{
+    position:relative; width:44px; height:44px; border-radius:50%;
+    background:var(--surface-2); border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .cart-btn:hover{ border-color:var(--accent-1); transform:translateY(-1px); }
+  .cart-btn svg{ width:19px; height:19px; }
+  .cart-count{
+    position:absolute; top:-5px; right:-5px; min-width:19px; height:19px; padding:0 4px;
+    border-radius:999px; background:var(--accent-grad); color:#fff; font-size:11px; font-weight:700;
+    display:flex; align-items:center; justify-content:center; border:2px solid var(--bg);
+  }
+  .menu-toggle{ display:none; width:40px; height:40px; align-items:center; justify-content:center; background:none; border:none; }
+  .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after{
+    content:''; display:block; width:22px; height:2px; background:var(--text); position:relative; transition:.25s;
+  }
+  .menu-toggle span::before{ position:absolute; top:-7px; }
+  .menu-toggle span::after{ position:absolute; top:7px; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; min-height:100vh; display:flex; align-items:center;
+    padding:150px 0 90px; overflow:hidden;
+    background:
+      radial-gradient(ellipse 900px 500px at 78% 18%, rgba(79,124,255,.20), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 15% 85%, rgba(155,92,255,.14), transparent 60%),
+      var(--bg-pure);
+  }
+  .hero-bg-img{
+    position:absolute; inset:0; z-index:0; opacity:.28;
+    background-image:url('https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover; background-position:center;
+    mask-image:linear-gradient(to bottom, rgba(0,0,0,.9), transparent 88%);
+    -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,.9), transparent 88%);
+  }
+  .hero-grid{
+    position:relative; z-index:2; display:grid; grid-template-columns:1.1fr .9fr; gap:60px; align-items:center;
+    max-width:var(--maxw); margin:0 auto; padding:0 28px;
+  }
+  .hero h1{ font-size:clamp(2.4rem, 4.6vw, 3.7rem); line-height:1.08; margin-bottom:22px; }
+  .hero h1 .grad{
+    background:var(--accent-grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero p{ font-size:17.5px; color:var(--text-dim); max-width:520px; margin-bottom:34px; }
+  .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:46px; }
+  .hero-stats{ display:flex; gap:38px; flex-wrap:wrap; }
+  .hero-stats div strong{ display:block; font-family:'Poppins'; font-size:26px; font-weight:700; }
+  .hero-stats div span{ font-size:13px; color:var(--text-dimmer); }
+
+  .hero-visual{ position:relative; }
+  .hero-card{
+    position:relative; border-radius:var(--radius-l); overflow:hidden; border:1px solid var(--border);
+    box-shadow:var(--shadow-glow);
+    animation:float 6s ease-in-out infinite;
+  }
+  .hero-card img{ width:100%; height:560px; object-fit:cover; }
+  .hero-card::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, transparent 40%, rgba(0,0,0,.75) 100%);
+  }
+  .float-chip{
+    position:absolute; z-index:3; background:rgba(20,20,20,.85); backdrop-filter:blur(10px);
+    border:1px solid var(--border); border-radius:var(--radius-m); padding:14px 18px;
+    display:flex; align-items:center; gap:12px; box-shadow:0 20px 40px -12px rgba(0,0,0,.6);
+  }
+  .float-chip.c1{ top:8%; left:-8%; animation:float 5s ease-in-out infinite; animation-delay:.4s; }
+  .float-chip.c2{ bottom:10%; right:-6%; animation:float 5.5s ease-in-out infinite; animation-delay:.9s; }
+  .float-chip .dot{ width:9px; height:9px; border-radius:50%; background:var(--success); box-shadow:0 0 10px var(--success); }
+  .float-chip strong{ display:block; font-size:14px; }
+  .float-chip span{ font-size:11.5px; color:var(--text-dimmer); }
+  @keyframes float{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);} }
+
+  section{ padding:110px 0; position:relative; }
+  .section-head{ max-width:640px; margin-bottom:56px; }
+  .section-head h2{ font-size:clamp(1.9rem,3.4vw,2.7rem); margin-bottom:14px; }
+  .section-head p{ color:var(--text-dim); font-size:16px; }
+  .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
+
+  [data-reveal]{ opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+  [data-reveal].in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- SERVICIOS ---------- */
+  .services{ background:var(--bg); }
+  .service-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:22px; }
+  .service-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l);
+    padding:32px 26px; display:flex; flex-direction:column; gap:16px;
+    transition:transform .3s ease, border-color .3s ease, background .3s ease;
+  }
+  .service-card:hover{ transform:translateY(-6px); border-color:rgba(155,92,255,.4); background:var(--surface-2); }
+  .service-icon{
+    width:52px; height:52px; border-radius:14px; background:var(--surface-3);
+    display:flex; align-items:center; justify-content:center; border:1px solid var(--border);
+  }
+  .service-icon svg{ width:24px; height:24px; stroke:url(#iconGrad); }
+  .service-card h3{ font-size:18px; }
+  .service-card p{ color:var(--text-dim); font-size:14px; flex-grow:1; }
+  .service-card .btn{ margin-top:6px; }
+
+  /* ---------- CATALOGO (CORREGIDO) ---------- */
+  .catalog{ background:var(--bg-pure); }
+  .filters{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:40px; }
+  .filter-btn{
+    padding:10px 20px; border-radius:999px; border:1px solid var(--border); background:transparent;
+    color:var(--text-dim); font-size:13.5px; font-weight:600; transition:.2s ease;
+  }
+  .filter-btn:hover{ color:var(--text); border-color:var(--text-dim); }
+  .filter-btn.active{ background:var(--accent-grad); color:#fff; border-color:transparent; }
+
+  .product-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:22px; }
+  .product-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-m); overflow:hidden;
+    display:flex; flex-direction:column; cursor:pointer; transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  }
+  .product-card:hover{ transform:translateY(-6px); border-color:rgba(79,124,255,.5); box-shadow:0 24px 50px -20px rgba(79,124,255,.35); }
+  
+  /* Ajuste de contenedor de imagen */
+  .product-media { 
+    position:relative; 
+    height:220px; 
+    overflow:hidden; 
+    background: rgba(255, 255, 255, 0.03); /* Fondo oscuro sutil sugerido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+  }
+  
+  /* Ajuste de imagen para no deformar */
+  .product-media img { 
+    max-width: 100%; 
+    max-height: 100%; 
+    width: auto; 
+    height: auto; 
+    object-fit: contain; 
+    transition: transform .5s ease; 
+  }
+
+  /* Ocultar iconos de imagen rota */
+  .product-media img[src=""], 
+  .product-media img:not([src]) { 
+    opacity: 0; 
+  }
+
+  .product-card:hover .product-media img{ transform:scale(1.08); }
+
+  .stock-tag{
+    position:absolute; top:12px; left:12px; background:rgba(0,0,0,.65); backdrop-filter:blur(6px);
+    border:1px solid rgba(61,220,132,.4); color:var(--success); font-size:11px; font-weight:700;
+    padding:5px 10px; border-radius:999px; display:flex; align-items:center; gap:6px;
+    z-index: 2;
+  }
+  .stock-tag::before{ content:''; width:6px; height:6px; border-radius:50%; background:var(--success); }
+  
+  .product-body{ padding:18px 18px 20px; display:flex; flex-direction:column; gap:10px; flex-grow:1; }
+  .product-cat{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-dimmer); font-weight:600; }
+  .product-body h3{ font-size:16px; font-weight:600; font-family:'Inter'; }
+  .product-body .desc{ font-size:13px; color:var(--text-dim); flex-grow:1; }
+  .product-foot{ display:flex; align-items:center; justify-content:space-between; margin-top:6px; }
+  .price{ font-family:'Poppins'; font-weight:700; font-size:19px; }
+  .add-btn{
+    width:38px; height:38px; border-radius:50%; background:var(--surface-3); border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center; transition:.2s ease;
+  }
+  .add-btn:hover{ background:var(--accent-grad); border-color:transparent; transform:scale(1.08); }
+  .add-btn svg{ width:16px; height:16px; }
+
+  /* ---------- POR QUE ELEGIRNOS ---------- */
+  .why{ background:var(--bg); }
+  .why-grid{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; }
+  .why-card{ padding:6px; }
+  .why-num{ font-family:'Poppins'; font-size:13px; color:var(--text-dimmer); font-weight:700; margin-bottom:18px; letter-spacing:.05em; }
+  .why-card h3{ font-size:20px; margin-bottom:10px; }
+  .why-card p{ color:var(--text-dim); font-size:14.5px; }
+  .why-line{ height:1px; background:var(--border); margin:22px 0; }
+
+  /* ---------- CONTACTO ---------- */
+  .contact{ background:var(--bg-pure); }
+  .contact-grid{ display:grid; grid-template-columns:.9fr 1.1fr; gap:50px; }
+  .contact-info h2{ margin-bottom:16px; }
+  .contact-info p{ color:var(--text-dim); margin-bottom:34px; }
+  .info-row{ display:flex; gap:16px; padding:18px 0; border-top:1px solid var(--border-soft); }
+  .info-row:last-of-type{ border-bottom:1px solid var(--border-soft); }
+  .info-icon{ width:40px; height:40px; border-radius:10px; background:var(--surface-2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .info-icon svg{ width:18px; height:18px; }
+  .info-row strong{ display:block; font-size:14.5px; margin-bottom:3px; }
+  .info-row span{ font-size:13.5px; color:var(--text-dim); }
+  .map-placeholder{
+    margin-top:28px; height:220px; border-radius:var(--radius-m); border:1px solid var(--border);
+    background:
+      linear-gradient(rgba(10,10,10,.55), rgba(10,10,10,.75)),
+      repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(255,255,255,.04) 25px),
+      repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(255,255,255,.04) 25px),
+      var(--surface);
+    display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px; color:var(--text-dim); font-size:13px;
+  }
+  .map-placeholder svg{ width:26px; height:26px; opacity:.7; }
+
+  .contact-form{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); padding:36px; }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+  .field{ display:flex; flex-direction:column; gap:8px; }
+  .field.full{ grid-column:1 / -1; }
+  .field label{ font-size:12.5px; color:var(--text-dim); font-weight:600; }
+  .field input, .field select, .field textarea{
+    background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-s);
+    padding:12px 14px; color:var(--text); font-size:14px; font-family:inherit; transition:border-color .2s ease;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--accent-1); outline:none; }
+  .field textarea{ resize:vertical; min-height:100px; }
+
+  /* ---------- FOOTER ---------- */
+  footer{ background:var(--bg-pure); border-top:1px solid var(--border-soft); padding:64px 0 30px; }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:50px; }
+  .footer-brand p{ color:var(--text-dim); font-size:14px; margin-top:14px; max-width:280px; }
+  .footer-col h4{ font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-dimmer); margin-bottom:16px; }
+  .footer-col li{ margin-bottom:10px; }
+  .footer-col a{ font-size:14px; color:var(--text-dim); transition:color .2s ease; }
+  .footer-col a:hover{ color:var(--text); }
+  .socials{ display:flex; gap:10px; margin-top:16px; }
+  .social-btn{
+    width:38px; height:38px; border-radius:50%; background:var(--surface-2); border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center; transition:.2s ease;
+  }
+  .social-btn:hover{ border-color:var(--accent-1); transform:translateY(-2px); }
+  .social-btn svg{ width:16px; height:16px; }
+  .footer-bottom{ display:flex; justify-content:space-between; align-items:center; padding-top:26px; border-top:1px solid var(--border-soft); font-size:13px; color:var(--text-dimmer); flex-wrap:wrap; gap:12px; }
+
+  /* ---------- FLOATING WHATSAPP ---------- */
+  .float-wa{
+    position:fixed; bottom:26px; left:26px; z-index:400; width:58px; height:58px; border-radius:50%;
+    background:var(--whatsapp); display:flex; align-items:center; justify-content:center;
+    box-shadow:0 14px 30px -8px rgba(37,211,102,.6); transition:transform .25s ease;
+  }
+  .float-wa:hover{ transform:scale(1.08); }
+  .float-wa svg{ width:28px; height:28px; }
+
+  /* ---------- CART DRAWER ---------- */
+  .overlay{
+    position:fixed; inset:0; background:rgba(0,0,0,.6); backdrop-filter:blur(3px); z-index:900;
+    opacity:0; pointer-events:none; transition:opacity .3s ease;
+  }
+  .overlay.show{ opacity:1; pointer-events:auto; }
+
+  .cart-drawer{
+    position:fixed; top:0; right:0; height:100vh; width:440px; max-width:92vw; z-index:950;
+    background:var(--surface); border-left:1px solid var(--border);
+    display:flex; flex-direction:column; transform:translateX(100%); transition:transform .38s cubic-bezier(.22,.9,.32,1);
+  }
+  .cart-drawer.open{ transform:translateX(0); }
+  .cart-head{ display:flex; align-items:center; justify-content:space-between; padding:24px 26px; border-bottom:1px solid var(--border-soft); }
+  .cart-head h3{ font-size:19px; }
+  .close-btn{ width:36px; height:36px; border-radius:50%; background:var(--surface-2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; }
+  .close-btn:hover{ border-color:var(--text-dim); }
+  .close-btn svg{ width:15px; height:15px; }
+
+  .cart-items{ flex-grow:1; overflow-y:auto; padding:20px 26px; }
+  .cart-empty{ display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; text-align:center; color:var(--text-dim); gap:14px; }
+  .cart-empty svg{ width:52px; height:52px; opacity:.4; }
+  .cart-item{ display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--border-soft); }
+  .cart-item img{ width:64px; height:64px; border-radius:10px; object-fit:contain; flex-shrink:0; background:rgba(255,255,255,0.05); }
+  .ci-info{ flex-grow:1; display:flex; flex-direction:column; gap:6px; }
+  .ci-info h4{ font-size:14px; font-weight:600; }
+  .ci-info .ci-price{ font-size:13px; color:var(--text-dim); }
+  .qty-control{ display:flex; align-items:center; gap:10px; margin-top:2px; }
+  .qty-control button{ width:24px; height:24px; border-radius:6px; background:var(--surface-2); border:1px solid var(--border); color:var(--text); font-size:14px; display:flex; align-items:center; justify-content:center; }
+  .qty-control span{ font-size:13px; min-width:16px; text-align:center; }
+  .ci-remove{ align-self:flex-start; color:var(--text-dimmer); background:none; border:none; }
+  .ci-remove:hover{ color:#ff6767; }
+  .ci-remove svg{ width:16px; height:16px; }
+
+  .cart-summary{ padding:22px 26px 26px; border-top:1px solid var(--border-soft); background:var(--surface); }
+  .sum-row{ display:flex; justify-content:space-between; font-size:14px; color:var(--text-dim); margin-bottom:8px; }
+  .sum-row.total{ font-size:18px; color:var(--text); font-weight:700; font-family:'Poppins'; margin-top:10px; }
+  .checkout-toggle{ margin-top:16px; }
+
+  .checkout-form{ margin-top:18px; display:none; flex-direction:column; gap:12px; }
+  .checkout-form.show{ display:flex; }
+  .checkout-form .field label{ font-size:11.5px; }
+  .checkout-form .field input, .checkout-form .field select{ padding:11px 12px; font-size:13.5px; }
+
+  /* ---------- PRODUCT MODAL ---------- */
+  .modal{
+    position:fixed; inset:0; z-index:960; display:flex; align-items:center; justify-content:center;
+    opacity:0; pointer-events:none; transition:opacity .3s ease; padding:24px;
+  }
+  .modal.open{ opacity:1; pointer-events:auto; }
+  .modal-box{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); max-width:900px; width:100%;
+    max-height:88vh; overflow-y:auto; display:grid; grid-template-columns:1fr 1fr; position:relative;
+    transform:scale(.94) translateY(14px); transition:transform .35s cubic-bezier(.22,.9,.32,1);
+  }
+  .modal.open .modal-box{ transform:scale(1) translateY(0); }
+  .modal-close{ position:absolute; top:18px; right:18px; z-index:5; width:38px; height:38px; border-radius:50%; background:rgba(0,0,0,.5); backdrop-filter:blur(6px); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; }
+  .modal-close svg{ width:16px; height:16px; }
+  
+  .modal-media{ 
+    background: rgba(255, 255, 255, 0.03); 
+    min-height:320px; 
+    display:flex; 
+    align-items:center; 
+    justify-content:center; 
+    padding: 30px;
+  }
+  .modal-media img{ 
+    max-width: 100%; 
+    max-height: 100%; 
+    width: auto; 
+    height: auto; 
+    object-fit:contain; 
+  }
+
+  .modal-info{ padding:34px 32px; display:flex; flex-direction:column; }
+  .modal-info .product-cat{ margin-bottom:8px; }
+  .modal-info h2{ font-size:24px; margin-bottom:10px; }
+  .modal-price-row{ display:flex; align-items:center; gap:14px; margin-bottom:18px; }
+  .modal-price{ font-family:'Poppins'; font-size:26px; font-weight:700; }
+  .specs{ margin:6px 0 20px; display:flex; flex-direction:column; gap:10px; }
+  .spec-row{ display:flex; justify-content:space-between; font-size:13.5px; padding:9px 0; border-bottom:1px solid var(--border-soft); }
+  .spec-row span:first-child{ color:var(--text-dim); }
+  .spec-row span:last-child{ font-weight:600; text-align:right; }
+  .pay-methods{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+  .pay-chip{ font-size:11.5px; padding:6px 12px; border-radius:999px; background:var(--surface-2); border:1px solid var(--border); color:var(--text-dim); }
+  .modal-actions{ display:flex; flex-direction:column; gap:10px; margin-top:auto; }
+
+  /* ---------- TOAST ---------- */
+  .toast{
+    position:fixed; bottom:26px; left:50%; transform:translateX(-50%) translateY(120%); z-index:1000;
+    background:var(--surface-2); border:1px solid var(--border); color:var(--text); padding:14px 24px;
+    border-radius:999px; font-size:14px; font-weight:600; display:flex; align-items:center; gap:10px;
+    box-shadow:0 20px 40px -12px rgba(0,0,0,.6); transition:transform .35s cubic-bezier(.22,.9,.32,1);
+  }
+  .toast.show{ transform:translateX(-50%) translateY(0); }
+  .toast svg{ width:16px; height:16px; color:var(--success); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 1024px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-visual{ order:-1; }
+    .hero-card img{ height:380px; }
+    .service-grid{ grid-template-columns:repeat(2,1fr); }
+    .product-grid{ grid-template-columns:repeat(2,1fr); }
+    .why-grid{ grid-template-columns:1fr; gap:0; }
+    .contact-grid{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 720px){
+    .nav-links{
+      position:fixed; top:73px; left:0; right:0; background:var(--bg); border-bottom:1px solid var(--border-soft);
+      flex-direction:column; align-items:flex-start; padding:20px 28px; gap:18px;
+      transform:translateY(-130%); transition:transform .3s ease; z-index:400;
+    }
+    .nav-links.open{ transform:translateY(0); }
+    .menu-toggle{ display:flex; }
+    section{ padding:76px 0; }
+    .hero{ padding:120px 0 60px; }
+    .hero-ctas .btn{ flex:1; }
+    .service-grid, .product-grid{ grid-template-columns:1fr; }
+    .form-row{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr; gap:30px; }
+    .footer-bottom{ flex-direction:column; align-items:flex-start; }
+    .modal-box{ grid-template-columns:1fr; }
+    .modal-media{ min-height:220px; }
+    .cart-drawer{ width:100%; max-width:100%; }
+    .hero-stats{ gap:24px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4F7CFF"/>
+      <stop offset="100%" stop-color="#9B5CFF"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <nav class="nav">
+    <a href="#inicio" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"></rect><line x1="11" y1="18" x2="13" y2="18"></line></svg>
+      </span>
+      AK <span>Technocell</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#nosotros">Por qué elegirnos</a></li>
+      <li><a href="#contacto">Ubicación</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="cart-btn" id="cartOpenBtn" aria-label="Abrir carrito">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú"><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="inicio">
+  <div class="hero-bg-img"></div>
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Venta · Reparación · Accesorios</div>
+      <h1>Tu celular en las <span class="grad">mejores manos</span>. Venta, Reparación y Accesorios VIP.</h1>
+      <p>Equipos de alta gama, técnicos certificados y repuestos premium. En AK Technocell cuidamos tu dispositivo con la precisión que merece.</p>
+      <div class="hero-ctas">
+        <a href="#catalogo" class="btn btn-primary">Ver Catálogo</a>
+        <a href="#servicios" class="btn btn-ghost">Agendar Reparación</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>+3.500</strong><span>Reparaciones exitosas</span></div>
+        <div><strong>98%</strong><span>Clientes satisfechos</span></div>
+        <div><strong>6 meses</strong><span>Garantía por escrito</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=900&q=80" alt="Smartphone de alta gama AK Technocell">
+      </div>
+      <div class="float-chip c1">
+        <span class="dot"></span>
+        <div><strong>Diagnóstico gratis</strong><span>Respuesta en 15 min</span></div>
+      </div>
+      <div class="float-chip c2">
+        <div><strong>⭐ 4.9/5</strong><span>+800 reseñas</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICIOS ================= -->
+<section class="services" id="servicios">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow">Taller técnico</div>
+      <h2>Reparación especializada, sin adivinar</h2>
+      <p>Diagnóstico preciso, repuestos originales y técnicos certificados. Agenda tu cita directo por WhatsApp.</p>
+    </div>
+    <div class="service-grid">
+
+      <div class="service-card" data-reveal>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg></div>
+        <h3>Cambio de Pantalla y Cristal</h3>
+        <p>Pantallas OLED/AMOLED originales y cristal templado de alta resistencia, instalación en el día.</p>
+        <a class="btn btn-whatsapp btn-sm" href="#" onclick="waRepair('Cambio de Pantalla y Cristal'); return false;">Agendar por WhatsApp</a>
+      </div>
+
+      <div class="service-card" data-reveal>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2"></rect><line x1="23" y1="10" x2="23" y2="14"></line></svg></div>
+        <h3>Reemplazo de Batería Original</h3>
+        <p>Baterías certificadas con capacidad real. Recupera la duración que tu equipo tenía el primer día.</p>
+        <a class="btn btn-whatsapp btn-sm" href="#" onclick="waRepair('Reemplazo de Batería Original'); return false;">Agendar por WhatsApp</a>
+      </div>
+
+      <div class="service-card" data-reveal>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+        <h3>Mantenimiento, Software y Micro-soldadura</h3>
+        <p>Limpieza interna, actualización de software y reparación de placa a nivel de componente.</p>
+        <a class="btn btn-whatsapp btn-sm" href="#" onclick="waRepair('Mantenimiento, Software y Micro-soldadura'); return false;">Agendar por WhatsApp</a>
+      </div>
+
+      <div class="service-card" data-reveal>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></div>
+        <h3>Diagnóstico Técnico Especializado</h3>
+        <p>Evaluación completa con microscopio y equipos de precisión antes de cualquier presupuesto.</p>
+        <a class="btn btn-whatsapp btn-sm" href="#" onclick="waRepair('Diagnóstico Técnico Especializado'); return false;">Agendar por WhatsApp</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CATALOGO ================= -->
+<section class="catalog" id="catalogo">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow">Tienda</div>
+      <h2>Catálogo completo</h2>
+      <p>Celulares, cargadores, protectores, audio y más — todo con garantía y soporte post-venta.</p>
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-filter="Todos">Todos</button>
+      <button class="filter-btn" data-filter="Celulares">Celulares</button>
+      <button class="filter-btn" data-filter="Cargadores">Cargadores</button>
+      <button class="filter-btn" data-filter="Protectores">Protectores y Fundas</button>
+      <button class="filter-btn" data-filter="Audio">Audio y Otros</button>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<!-- ================= POR QUE ELEGIRNOS ================= -->
+<section class="why" id="nosotros">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow">Confianza</div>
+      <h2>Por qué elegirnos</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card" data-reveal>
+        <div class="why-num">Garantía</div>
+        <h3>Garantía por escrito</h3>
+        <p>Toda reparación y venta incluye garantía documentada, sin letras pequeñas.</p>
+      </div>
+      <div class="why-card" data-reveal>
+        <div class="why-num">Repuestos</div>
+        <h3>Piezas premium certificadas</h3>
+        <p>Trabajamos solo con repuestos originales o de grado A, nunca genéricos de baja calidad.</p>
+      </div>
+      <div class="why-card" data-reveal>
+        <div class="why-num">Equipo</div>
+        <h3>Técnicos certificados</h3>
+        <p>Especialistas con años de experiencia en microsoldadura y diagnóstico de placas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info" data-reveal>
+        <div class="eyebrow">Visítanos</div>
+        <h2>Ubicación y horarios</h2>
+        <p>Estamos para atenderte de manera presencial o a través de nuestros canales digitales.</p>
+
+        <div class="info-row">
+          <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+          <div><strong>Dirección</strong><span>Av. Principal, Centro Comercial Plaza Tech, Local 24, Caracas</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+          <div><strong>Horario</strong><span>Lunes a sábado: 9:00 am – 6:30 pm</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
+          <div><strong>WhatsApp / Teléfono</strong><span>+58 424-1234567</span></div>
+        </div>
+
+        <div class="map-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9A9A9A" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Mapa — AK Technocell, Caracas
+        </div>
+      </div>
+
+      <form class="contact-form" data-reveal onsubmit="sendContactWA(event)">
+        <h3 style="margin-bottom:22px; font-size:19px;">Escríbenos directamente</h3>
+        <div class="form-row">
+          <div class="field"><label>Nombre completo</label><input type="text" id="cName" required placeholder="Tu nombre"></div>
+          <div class="field"><label>Teléfono</label><input type="tel" id="cPhone" required placeholder="0412-0000000"></div>
+        </div>
+        <div class="field full" style="margin-bottom:16px;"><label>Correo (opcional)</label><input type="email" id="cEmail" placeholder="tucorreo@ejemplo.com"></div>
+        <div class="field full" style="margin-bottom:20px;"><label>Mensaje</label><textarea id="cMsg" required placeholder="Cuéntanos qué necesitas..."></textarea></div>
+        <button type="submit" class="btn btn-whatsapp btn-block">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.76.46 3.48 1.34 5L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.51 2 12.04 2zm0 18.1a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.81c0 4.54-3.7 8.2-8.24 8.2z"></path></svg>
+          Enviar mensaje por WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"></rect><line x1="11" y1="18" x2="13" y2="18"></line></svg></span>
+          AK <span>Technocell</span>
+        </div>
+        <p>Venta, reparación y accesorios de celulares con garantía y atención personalizada.</p>
+        <div class="socials">
+          <a class="social-btn" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="#fff"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.9 3.78-3.9 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94z"></path></svg></a>
+          <a class="social-btn" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a class="social-btn" href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="#fff"><path d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.6 2.55 2.55 0 0 1 .78.12V9.7a5.87 5.87 0 0 0-.78-.05A5.87 5.87 0 1 0 15.6 15.5V8.79a7.16 7.16 0 0 0 4.22 1.36V7.06a4.28 4.28 0 0 1-3.22-1.24z"></path></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Cambio de pantalla</a></li>
+          <li><a href="#servicios">Cambio de batería</a></li>
+          <li><a href="#servicios">Micro-soldadura</a></li>
+          <li><a href="#servicios">Diagnóstico técnico</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+584241234567">+58 424-1234567</a></li>
+          <li><a href="#contacto">Ver ubicación</a></li>
+          <li><a href="#" onclick="openWhatsApp('Hola, quisiera más información sobre AK Technocell.'); return false;">Escribir por WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 AK Technocell. Todos los derechos reservados.</span>
+      <span>Diseñado con precisión, como cada reparación.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+<button class="float-wa" onclick="openWhatsApp('Hola, quisiera más información sobre AK Technocell.')" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#08210f"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.76.46 3.48 1.34 5L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.51 2 12.04 2zm0 18.1a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.81c0 4.54-3.7 8.2-8.24 8.2zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23a7.5 7.5 0 0 1-1.38-1.72c-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.4 1.02 2.57.12.17 1.75 2.67 4.24 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29z"></path></svg>
+</button>
+
+<!-- ================= OVERLAY ================= -->
+<div class="overlay" id="overlay"></div>
+
+<!-- ================= CART DRAWER ================= -->
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <h3>Tu carrito</h3>
+    <button class="close-btn" id="cartCloseBtn"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-summary" id="cartSummary">
+    <div class="sum-row"><span>Subtotal</span><span id="sumSubtotal">$0.00</span></div>
+    <div class="sum-row total"><span>Total</span><span id="sumTotal">$0.00</span></div>
+    <button class="btn btn-primary btn-block checkout-toggle" id="checkoutToggleBtn">Proceder al Checkout</button>
+
+    <form class="checkout-form" id="checkoutForm" onsubmit="finalizarPedidoWA(event)">
+      <div class="field"><label>Nombre del cliente *</label><input type="text" id="ckName" required placeholder="Nombre y apellido"></div>
+      <div class="field"><label>Teléfono *</label><input type="tel" id="ckPhone" required placeholder="0412-0000000"></div>
+      <div class="field">
+        <label>Método de pago *</label>
+        <select id="ckPayment" required>
+          <option value="">Selecciona...</option>
+          <option>Pago Móvil</option>
+          <option>Zelle</option>
+          <option>Efectivo</option>
+          <option>Transferencia</option>
+          <option>Binance</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Método de entrega *</label>
+        <select id="ckDelivery" required>
+          <option value="">Selecciona...</option>
+          <option>Pick-up en tienda</option>
+          <option>Envío a domicilio</option>
+        </select>
+      </div>
+      <div class="field" id="ckAddressWrap" style="display:none;">
+        <label>Dirección de envío</label>
+        <input type="text" id="ckAddress" placeholder="Dirección completa">
+      </div>
+      <button type="submit" class="btn btn-whatsapp btn-block" style="margin-top:6px;">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.76.46 3.48 1.34 5L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.51 2 12.04 2zm0 18.1a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.81c0 4.54-3.7 8.2-8.24 8.2z"></path></svg>
+        Finalizar Pedido por WhatsApp
+      </button>
+    </form>
+  </div>
+</aside>
+
+<!-- ================= PRODUCT MODAL ================= -->
+<div class="modal" id="productModal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalCloseBtn"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+    <div class="modal-media"><img id="modalImg" src="" alt="" onerror="this.style.opacity='0';"></div>
+    <div class="modal-info">
+      <span class="product-cat" id="modalCat"></span>
+      <h2 id="modalName"></h2>
+      <div class="modal-price-row">
+        <span class="modal-price" id="modalPrice"></span>
+        <span class="stock-tag" style="position:static;">Disponible</span>
+      </div>
+      <div class="specs" id="modalSpecs"></div>
+      <div>
+        <strong style="font-size:12.5px; color:var(--text-dim); display:block; margin-bottom:10px;">MÉTODOS DE PAGO ACEPTADOS</strong>
+        <div class="pay-methods">
+          <span class="pay-chip">Pago Móvil</span>
+          <span class="pay-chip">Zelle</span>
+          <span class="pay-chip">Efectivo</span>
+          <span class="pay-chip">Binance</span>
+          <span class="pay-chip">Transferencia</span>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary btn-block" id="modalAddBtn">Añadir al Carrito</button>
+        <button class="btn btn-whatsapp btn-block" id="modalWaBtn">Consultar Disponibilidad por WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= TOAST ================= -->
+<div class="toast" id="toast">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+  <span id="toastMsg">Producto añadido al carrito</span>
+</div>
+
+<script>
+/* =====================================================
+   AK TECHNOCELL — LÓGICA DE LA TIENDA
+===================================================== */
+
+const WHATSAPP_NUMBER = "584241234567"; 
+
+/* ---------- CATÁLOGO DE PRODUCTOS CON RUTAS LOCALES ---------- */
+const PRODUCTS = [
+  {
+    id: 'p1',
+    cat: 'Celulares',
+    name: 'iPhone 15 Pro Max',
+    price: 1199.99,
+    img: './imagenes/iPhone 15 Pro Max.png',
+    desc: 'El chip A17 Pro más potente, cámara de 48MP y diseño en Titanio.',
+    specs: [['Capacidad','256GB'],['Color','Natural'],['Pantalla','6.7" OLED']]
+  },
+  {
+    id: 'p2',
+    cat: 'Celulares',
+    name: 'Samsung S24 Ultra',
+    price: 1249.00,
+    img: './imagenes/Samsung S24 Ultra.png',
+    desc: 'Inteligencia Artificial integrada, S-Pen incluido y cámara de 200MP.',
+    specs: [['Capacidad','512GB'],['RAM','12GB'],['Procesador','Snapdragon G3']]
+  },
+  {
+    id: 'p3',
+    cat: 'Cargadores',
+    name: 'Cargador Original 20W USB-C',
+    price: 25.00,
+    img: './imagenes/Cargador Original 20W USB-C.png',
+    desc: 'Carga rápida certificada para equipos iPhone y Android de gama alta.',
+    specs: [['Potencia','20W'],['Tipo','USB-C'],['Garantía','3 meses']]
+  },
+  {
+    id: 'p4',
+    cat: 'Protectores',
+    name: 'Fundas Silicona Premium',
+    price: 15.00,
+    img: './imagenes/funda silicona premium.png',
+    desc: 'Protección interna de gamuza y exterior antideslizante de alta calidad.',
+    specs: [['Material','Silicona'],['Ajuste','Preciso'],['Colores','Varios']]
+  },
+  {
+    id: 'p5',
+    cat: 'Audio',
+    name: 'AirPods Pro (2da Gen)',
+    price: 249.00,
+    img: './imagenes/AirPods Pro (2da Gen).png',
+    desc: 'Cancelación de ruido activa, audio espacial y estuche de carga USB-C.',
+    specs: [['Batería','Hasta 30h'],['Conector','USB-C'],['Chip','H2']]
+  },
+  {
+    id: 'p6',
+    cat: 'Celulares',
+    name: 'Xiaomi Redmi Note 13 Pro',
+    price: 320.00,
+    img: './imagenes/Xiaomi Redmi Note 13 Pro.png',
+    desc: 'Excelente relación calidad-precio con pantalla de 120Hz y carga ultra rápida.',
+    specs: [['Capacidad','256GB'],['RAM','8GB'],['Cámara','200MP']]
+  }
+];
+/* ---------- ESTADO DEL CARRITO ---------- */
+let cart = [];
+try{
+  const saved = localStorage.getItem("ak_cart");
+  if(saved) cart = JSON.parse(saved);
+}catch(e){ cart = []; }
+
+function saveCart(){
+  try{ localStorage.setItem("ak_cart", JSON.stringify(cart)); }catch(e){}
+}
+
+const fmt = (n) => "$" + n.toFixed(2);
+
+/* ---------- RENDER CATÁLOGO ---------- */
+const productGrid = document.getElementById("productGrid");
+
+function renderProducts(filter){
+  const list = filter === "Todos" ? PRODUCTS : PRODUCTS.filter(p => p.cat === filter);
+  productGrid.innerHTML = list.map(p => `
+    <div class="product-card" data-reveal onclick="openProductModal('${p.id}')">
+      <div class="product-media">
+        <span class="stock-tag">Disponible</span>
+        <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.opacity='0';">
+      </div>
+      <div class="product-body">
+        <span class="product-cat">${p.cat}</span>
+        <h3>${p.name}</h3>
+        <p class="desc">${p.desc}</p>
+        <div class="product-foot">
+          <span class="price">${fmt(p.price)}</span>
+          <button class="add-btn" aria-label="Añadir al carrito" onclick="event.stopPropagation(); addToCart('${p.id}');">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join("");
+  observeReveals();
+}
+renderProducts("Todos");
+
+/* ---------- FILTROS ---------- */
+document.getElementById("filters").addEventListener("click", (e) => {
+  const btn = e.target.closest(".filter-btn");
+  if(!btn) return;
+  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  renderProducts(btn.dataset.filter);
+});
+
+/* ---------- CARRITO: LÓGICA ---------- */
+function findProduct(id){ return PRODUCTS.find(p => p.id === id); }
+
+function addToCart(id, silent){
+  const existing = cart.find(i => i.id === id);
+  if(existing){ existing.qty += 1; }
+  else{ cart.push({ id, qty: 1 }); }
+  saveCart();
+  renderCart();
+  if(!silent) showToast("Producto añadido al carrito");
+}
+
+function removeFromCart(id){
+  cart = cart.filter(i => i.id !== id);
+  saveCart();
+  renderCart();
+}
+
+function changeQty(id, delta){
+  const item = cart.find(i => i.id === id);
+  if(!item) return;
+  item.qty += delta;
+  if(item.qty <= 0){ removeFromCart(id); return; }
+  saveCart();
+  renderCart();
+}
+
+function cartTotal(){
+  return cart.reduce((sum, item) => {
+    const p = findProduct(item.id);
+    return sum + (p ? p.price * item.qty : 0);
+  }, 0);
+}
+
+function cartCountTotal(){
+  return cart.reduce((sum, item) => sum + item.qty, 0);
+}
+
+function renderCart(){
+  const cartItemsEl = document.getElementById("cartItems");
+  const countEl = document.getElementById("cartCount");
+  countEl.textContent = cartCountTotal();
+
+  if(cart.length === 0){
+    cartItemsEl.innerHTML = `
+      <div class="cart-empty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <p>Tu carrito está vacío</p>
+      </div>`;
+  } else {
+    cartItemsEl.innerHTML = cart.map(item => {
+      const p = findProduct(item.id);
+      if(!p) return "";
+      return `
+        <div class="cart-item">
+          <img src="${p.img}" alt="${p.name}" onerror="this.style.opacity='0';">
+          <div class="ci-info">
+            <h4>${p.name}</h4>
+            <span class="ci-price">${fmt(p.price)}</span>
+            <div class="qty-control">
+              <button onclick="changeQty('${p.id}', -1)" aria-label="Restar">−</button>
+              <span>${item.qty}</span>
+              <button onclick="changeQty('${p.id}', 1)" aria-label="Sumar">+</button>
+            </div>
+          </div>
+          <button class="ci-remove" onclick="removeFromCart('${p.id}')" aria-label="Eliminar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m5 0V4a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v2"></path></svg>
+          </button>
+        </div>`;
+    }).join("");
+  }
+
+  const total = cartTotal();
+  document.getElementById("sumSubtotal").textContent = fmt(total);
+  document.getElementById("sumTotal").textContent = fmt(total);
+}
+renderCart();
+
+/* ---------- DRAWER DEL CARRITO ---------- */
+const cartDrawer = document.getElementById("cartDrawer");
+const overlay = document.getElementById("overlay");
+
+function openCart(){
+  cartDrawer.classList.add("open");
+  overlay.classList.add("show");
+}
+function closeCart(){
+  cartDrawer.classList.remove("open");
+  overlay.classList.remove("show");
+  document.getElementById("checkoutForm").classList.remove("show");
+}
+document.getElementById("cartOpenBtn").addEventListener("click", openCart);
+document.getElementById("cartCloseBtn").addEventListener("click", closeCart);
+overlay.addEventListener("click", () => { closeCart(); closeModal(); });
+
+document.getElementById("checkoutToggleBtn").addEventListener("click", () => {
+  if(cart.length === 0){ showToast("Agrega productos antes de continuar"); return; }
+  document.getElementById("checkoutForm").classList.toggle("show");
+});
+
+document.getElementById("ckDelivery").addEventListener("change", (e) => {
+  document.getElementById("ckAddressWrap").style.display = e.target.value === "Envío a domicilio" ? "flex" : "none";
+});
+
+/* ---------- CHECKOUT -> WHATSAPP ---------- */
+function finalizarPedidoWA(e){
+  e.preventDefault();
+  if(cart.length === 0){ showToast("Tu carrito está vacío"); return; }
+
+  const name = document.getElementById("ckName").value.trim();
+  const phone = document.getElementById("ckPhone").value.trim();
+  const payment = document.getElementById("ckPayment").value;
+  const delivery = document.getElementById("ckDelivery").value;
+  const address = document.getElementById("ckAddress").value.trim();
+
+  let msg = `¡Hola AK Technocell! 👋 Quiero confirmar el siguiente pedido:\n\n`;
+  msg += `*RESUMEN DEL PEDIDO*\n`;
+  cart.forEach(item => {
+    const p = findProduct(item.id);
+    if(!p) return;
+    msg += `• ${p.name} x${item.qty} — ${fmt(p.price * item.qty)}\n`;
+  });
+  msg += `\n*Total: ${fmt(cartTotal())}*\n\n`;
+  msg += `*DATOS DEL CLIENTE*\n`;
+  msg += `Nombre: ${name}\n`;
+  msg += `Teléfono: ${phone}\n`;
+  msg += `Método de pago: ${payment}\n`;
+  msg += `Entrega: ${delivery}\n`;
+  if(delivery === "Envío a domicilio" && address){ msg += `Dirección: ${address}\n`; }
+
+  openWhatsApp(msg);
+}
+
+/* ---------- FORMULARIO DE CONTACTO -> WHATSAPP ---------- */
+function sendContactWA(e){
+  e.preventDefault();
+  const name = document.getElementById("cName").value.trim();
+  const phone = document.getElementById("cPhone").value.trim();
+  const email = document.getElementById("cEmail").value.trim();
+  const message = document.getElementById("cMsg").value.trim();
+
+  let msg = `¡Hola AK Technocell! Mi nombre es ${name}.\n`;
+  msg += `Teléfono: ${phone}\n`;
+  if(email) msg += `Correo: ${email}\n`;
+  msg += `\nMensaje: ${message}`;
+
+  openWhatsApp(msg);
+}
+
+/* ---------- WHATSAPP HELPERS ---------- */
+function openWhatsApp(text){
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+  window.open(url, "_blank");
+}
+
+function waRepair(serviceName){
+  openWhatsApp(`Hola AK Technocell, quisiera agendar el servicio de: ${serviceName}. ¿Podrían indicarme disponibilidad y precio?`);
+}
+
+/* ---------- MODAL DE PRODUCTO ---------- */
+const productModal = document.getElementById("productModal");
+let currentModalProduct = null;
+
+function openProductModal(id){
+  const p = findProduct(id);
+  if(!p) return;
+  currentModalProduct = p;
+
+  const mImg = document.getElementById("modalImg");
+  mImg.style.opacity = '1';
+  mImg.src = p.img;
+  mImg.alt = p.name;
+  
+  document.getElementById("modalCat").textContent = p.cat;
+  document.getElementById("modalName").textContent = p.name;
+  document.getElementById("modalPrice").textContent = fmt(p.price);
+  document.getElementById("modalSpecs").innerHTML = p.specs.map(s => `
+    <div class="spec-row"><span>${s[0]}</span><span>${s[1]}</span></div>
+  `).join("");
+
+  document.getElementById("modalAddBtn").onclick = () => { addToCart(p.id); };
+  document.getElementById("modalWaBtn").onclick = () => {
+    openWhatsApp(`Hola AK Technocell, quisiera consultar disponibilidad de: ${p.name} (${fmt(p.price)}).`);
+  };
+
+  productModal.classList.add("open");
+  overlay.classList.add("show");
+}
+
+function closeModal(){
+  productModal.classList.remove("open");
+  if(!cartDrawer.classList.contains("open")) overlay.classList.remove("show");
+}
+document.getElementById("modalCloseBtn").addEventListener("click", closeModal);
+
+/* ---------- MENU MOVIL ---------- */
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+menuToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
+navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
+
+/* ---------- TOAST ---------- */
+let toastTimer;
+function showToast(msg){
+  const toast = document.getElementById("toast");
+  document.getElementById("toastMsg").textContent = msg;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 2400);
+}
+
+/* ---------- SCROLL REVEAL ---------- */
+function observeReveals(){
+  const els = document.querySelectorAll("[data-reveal]:not(.in)");
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("in");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
+}
+observeReveals();
+
+/* ---------- HEADER SCROLL SHADOW ---------- */
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("header");
+  if(window.scrollY > 30){ header.style.boxShadow = "0 10px 30px -18px rgba(0,0,0,.7)"; }
+  else{ header.style.boxShadow = "none"; }
+});
+
+/* ---------- ESC PARA CERRAR ---------- */
+document.addEventListener("keydown", (e) => {
+  if(e.key === "Escape"){ closeCart(); closeModal(); }
+});
+</script>
+</body>
+</html>
